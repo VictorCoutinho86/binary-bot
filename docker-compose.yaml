@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:  
+  investing:
+    container_name: binary-bot
+    build: ./
+    restart: always
+    mem_limit: 256M
+    mem_reservation: 128M
+    
+    env_file: .env
