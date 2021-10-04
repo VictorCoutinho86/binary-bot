@@ -5,6 +5,7 @@ Spyder Editor
 Este é um arquivo de script temporário.
 """
 
+import os
 import logging
 import time
 from iqoptionapi.stable_api import IQ_Option
@@ -18,7 +19,7 @@ def login(verbose = False, iq = None, checkConnection = False):
 
     if iq == None:
       print("Trying to connect to IqOption")
-      iq=IQ_Option('USERNAME','PASSWORD') # YOU HAVE TO ADD YOUR USERNAME AND PASSWORD
+      iq=IQ_Option(os.getenv('USERNAME'),os.getenv('PASSWORD')) # YOU HAVE TO ADD YOUR USERNAME AND PASSWORD
       iq.connect()
 
     if iq != None:
